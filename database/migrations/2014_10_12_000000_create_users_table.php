@@ -15,10 +15,19 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
+            $table->integer('parish_id')->nullable();
+            $table->string('first_name')->nullable();
+            $table->string('last_name')->nullable();
+            $table->boolean('user_type')
+                ->comment('0 => SUPER ADMIN, 1 => WEM, 2 => PASTOR')
+                ->default('1');
+            $table->boolean('user_status')
+                ->comment('0 => ON HOLD, 1 => EXEMPTION')
+                ->default('1');
             $table->string('email')->unique();
             $table->string('password');
-            $table->rememberToken();
+            $table->rememberToken()->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

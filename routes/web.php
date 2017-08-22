@@ -12,21 +12,21 @@
 */
 
 Route::get('/', function () {
-    return response()->file( public_path() . '/index.html' );
+    return view('index');
 });
 
 Route::get('/{angular_route}', function () {
-    return response()->file( public_path() . '/index.html' );
+    return view('index');
 });
 Route::get('/{angular_route}/{angular_sub_route}', function () {
-    return response()->file( public_path() . '/index.html' );
+    return view('index');
 });
 Route::get('/{angular_route}/{angular_sub_route}/{angular_sub_route}', function () {
-    return response()->file( public_path() . '/index.html' );
+    return view('index');
 });
 Route::get('/{angular_route}/{angular_sub_route}/{angular_sub_route}/{angular_sub_route}', function () {
-    return response()->file( public_path() . '/index.html' );
+   return view('index');
 });
 Route::get('/{angular_route}/{angular_sub_route}/{angular_sub_route}/{angular_sub_route}/{angular_sub_route}', function () {
-    return response()->file( public_path() . '/index.html' );
+    return view('index');
 });
